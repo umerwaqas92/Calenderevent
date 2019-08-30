@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:showIn="@layout/activity_users__list"
+    tools:context=".activities.Users_List">
+
+  <androidx.cardview.widget.CardView
+      android:id="@+id/edt_search_txt_card"
+
+      android:layout_width="match_parent"
+      android:layout_height="60dp"
+      app:layout_constraintTop_toTopOf="parent"
+
+      >
+     <androidx.constraintlayout.widget.ConstraintLayout
+         android:gravity="center_vertical"
+         android:orientation="horizontal"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent">
+
+         <ImageButton
+            android:scaleType="fitCenter"
+             android:id="@+id/imageButton"
+             android:layout_width="40dp"
+             android:layout_height="50dp"
+             android:layout_marginStart="8dp"
+             android:layout_marginLeft="8dp"
+             android:layout_marginTop="8dp"
+             android:background="@android:color/transparent"
+             android:src="@drawable/ic_menu"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent" />
+
+
+         <Button
+
+             android:id="@+id/button"
+             android:layout_width="40dp"
+             android:layout_height="40dp"
+
+
+             android:layout_marginTop="8dp"
+             android:layout_marginEnd="8dp"
+             android:layout_marginRight="8dp"
+             android:layout_marginBottom="8dp"
+             android:background="@drawable/ic_add_box"
+
+             android:onClick="show_bottom_clicked"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintTop_toTopOf="parent" />
+
+         <EditText
+             android:visibility="invisible"
+            android:layout_marginLeft="10dp"
+             android:id="@+id/edt_search_txt"
+             android:layout_width="wrap_content"
+             android:layout_height="match_parent"
+             android:layout_marginTop="8dp"
+
+             android:layout_marginBottom="8dp"
+             android:background="@color/white"
+
+             android:hint="Search user"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintStart_toEndOf="@+id/imageButton"
+             app:layout_constraintTop_toTopOf="parent" />
+
+         <ImageButton
+             android:id="@+id/imageButton_search"
+             android:layout_width="40dp"
+             android:layout_height="50dp"
+             android:layout_marginTop="8dp"
+             android:layout_marginEnd="8dp"
+             android:layout_marginRight="8dp"
+             android:background="@android:color/transparent"
+             android:scaleType="fitCenter"
+             android:src="@drawable/ic_search"
+             app:layout_constraintEnd_toStartOf="@+id/button"
+             app:layout_constraintTop_toTopOf="parent" />
+     </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:layout_marginTop="20dp"
+        android:id="@+id/user_list_reclrView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:paddingBottom="50dp"
+        app:layout_constraintTop_toBottomOf="@+id/edt_search_txt_card"></androidx.recyclerview.widget.RecyclerView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

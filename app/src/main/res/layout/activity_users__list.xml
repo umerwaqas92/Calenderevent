@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.Users_List">
+
+    <include layout="@layout/activity_users__list_content" />
+
+    <!-- Adding bottom sheet after main content -->
+    <include layout="@layout/add_user" />
+    <include layout="@layout/delete_user_bottom" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

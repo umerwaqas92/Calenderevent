@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:elevation="10dp"
+    android:background="@color/white"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="90dp"
+    android:id="@+id/bottome_ad_newUser"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    >
+
+   <LinearLayout
+       android:layout_margin="10dp"
+
+       android:gravity="center_horizontal"
+       android:orientation="vertical"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+       <TextView
+           style="@style/textView01"
+           android:text="User Profile Picture"
+           />
+
+
+
+       <ImageButton
+           android:background="@color/white"
+           android:src="@drawable/ic_account_circle"
+           android:scaleType="centerCrop"
+           android:id="@+id/user_profile_img"
+           android:layout_width="100dp"
+           android:layout_height="100dp" />
+
+
+       <TextView
+           style="@style/textView01"
+           android:text="User Name"
+           />
+       <EditText
+           android:hint="@string/profile_user_name_hint"
+           android:id="@+id/user_profile_name"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" />
+       <TextView
+           style="@style/textView01"
+           android:text="User Email"
+           />
+       <EditText
+           android:hint="@string/user_email"
+           android:id="@+id/user_profile_email"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" />
+
+   </LinearLayout>
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
+        android:id="@+id/ad_new_user_done"
+        style="@style/Buttone01"
+        android:text="@string/add_new_user_done"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

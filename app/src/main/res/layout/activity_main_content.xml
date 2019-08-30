@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/edt_search_txt_card"
+
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintTop_toTopOf="parent"
+
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:onClick="back_mainactivity"
+                android:scaleType="fitCenter"
+                android:id="@+id/imageButton"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_keyboard_backspace"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/edt_search_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center_vertical"
+                android:text="Waqas Khan"
+                android:textColor="@color/Lightblack0"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageButton_search" />
+
+
+            <TextView
+                android:id="@+id/edt_search_txt_time"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+
+                android:layout_marginLeft="8dp"
+                android:gravity="center_vertical"
+
+                android:text="Waqas Khan"
+                android:textColor="@color/Lightblack0"
+                android:textSize="20dp"
+                android:visibility="visible"
+                app:layout_constraintStart_toEndOf="@+id/imageButton" />
+
+            <ImageView
+                android:id="@+id/imageButton_search"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_search"
+                app:layout_constraintEnd_toStartOf="@+id/edt_search_txt"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:layout_marginTop="10dp"
+
+        style="@style/textView01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calender"
+        tools:layout_editor_absoluteX="5dp" />
+    <com.stacktips.view.CustomCalendarView
+        android:id="@+id/calendar_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        app:selectedDayBackgroundColor="@color/colorPrimaryDark"
+
+        >
+    </com.stacktips.view.CustomCalendarView>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/textView"
+        style="@style/textView01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="User total events"
+        tools:layout_editor_absoluteX="5dp" />
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:id="@+id/event_details_recyleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+
+
+</LinearLayout>
