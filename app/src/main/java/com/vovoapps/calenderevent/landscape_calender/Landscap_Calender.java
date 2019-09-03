@@ -96,7 +96,10 @@ public class Landscap_Calender extends AppCompatActivity {
                     users.clear();
                     users.addAll(database_handler.getAllUsers());
 
+
                     for (int k = 0; k < users.size(); k++) {
+
+
                         User user = users.get(k);
 
                         events.clear();
@@ -123,34 +126,54 @@ public class Landscap_Calender extends AppCompatActivity {
 
                         Log.e("LandScap-EventsSize", "" + events.size());
 
-                        for (int i = 0; i < events.size(); i++) {
 
-                            User_Event2 event = events.get(i);
+                        for (int j=0;j<32;j++){
+//                            User_Event2 event = events.get(i);
 
-                            Calendar calendar = Calendar.getInstance();
-                            Date date = new Date();
-                            date.setTime(event.getEvent_date());
-                            calendar.setTime(date);
+                            for (int i = 0; i < events.size(); i++) {
 
-                            Log.e("LandScap-EventDate", "" + event.getEvent_date());
-                            Log.e("LandScap-EventCalendar", "" + calendar.get(Calendar.DATE));
-                            Log.e("LandScap-EventIndex", "" + i);
+                                User_Event2 event = events.get(i);
+                                Calendar calendar=Calendar.getInstance();
+                                calendar.setTimeInMillis(event.getEvent_date());
 
 
-                            if (i == 0) {
-                                ImageView imageView = new ImageView(Landscap_Calender.this);
-                                imageView.setPadding(16, 16, 16, 16);
-                                imageView.setImageBitmap(database_handler.getuser_pic(user));
-                                newRow.addView(imageView);
+//                                Calendar calendar = Calendar.getInstance();
+//                                Date date = new Date();
+//                                date.setTime(event.getEvent_date());
+//                                calendar.setTime(date);
 
-                            } else {
+                                Log.e("LandScap-EventDate", "" + event.getEvent_date());
+                                Log.e("LandScap-EventCalendar", "" + calendar.get(Calendar.DATE));
+                                Log.e("LandScap-EventIndex", "" + i);
 
-                                TextView rowTextView = new TextView(Landscap_Calender.this);
-                                rowTextView.setPadding(16, 16, 16, 16);
-                                rowTextView.setBackgroundColor(event.getColor());
-                                rowTextView.setTextColor(Color.BLACK);
-                                rowTextView.setText("" + event.getTitle());
-                                newRow.addView(rowTextView);
+
+                                if (i == 0 &&j==0) {
+                                    ImageView imageView = new ImageView(Landscap_Calender.this);
+                                    imageView.setPadding(16, 16, 16, 16);
+                                    imageView.setImageBitmap(database_handler.getuser_pic(user));
+                                    newRow.addView(imageView);
+
+                                }else if (i == 0 ) {
+                                    TextView rowTextView = new TextView(Landscap_Calender.this);
+                                    rowTextView.setPadding(16, 16, 16, 16);
+                                    rowTextView.setText("");
+                                    newRow.addView(rowTextView);
+
+                                }
+
+                                    if(calendar.get(Calendar.DAY_OF_MONTH)==j){
+
+                                        TextView rowTextView = new TextView(Landscap_Calender.this);
+                                        rowTextView.setPadding(16, 16, 16, 16);
+                                        rowTextView.setBackgroundColor(event.getColor());
+                                        rowTextView.setTextColor(Color.BLACK);
+                                        Log.e("EVENT_NAME",event.getTitle()+i);
+                                        Log.e("EVENT_NAME",event.getId()+", "+i);
+                                        rowTextView.setText("" + event.getTitle()+i);
+                                        newRow.addView(rowTextView);
+
+
+
                            /*     for (int j = 1; j < 32; j++) {
 
                                     if (j == calendar.get(Calendar.DATE)) {
@@ -164,14 +187,22 @@ public class Landscap_Calender extends AppCompatActivity {
                                         newRow.addView(rowTextView, i);
                                     }
                                 }*/
-                            }
+                                }
                             /*
                             for (int j = 0; j < 32; j++) {
 
                             }
 */
 
+                            }
+
+
+
                         }
+
+
+
+
                         tableLayout.addView(newRow);
                     }
 
