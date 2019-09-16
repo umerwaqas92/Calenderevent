@@ -68,16 +68,18 @@ public class Users_List extends MyActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_users__list);
         context = this;
-        startService(new Intent(context, Service_AI.class));
+//        startService(new Intent(context, Service_AI.class));
 //        bottom_sheet_parent=(CoordinatorLayout) findViewById(R.id.bottome_ad_newUser_parent);
 
         db = new Database_Handler(context);
 
 
         bottom_sheet = (LinearLayout) findViewById(R.id.bottome_ad_newUser);
+
         usr_edt_srch = (EditText) findViewById(R.id.edt_search_txt);
 
         add_new_order_bottom = BottomSheetBehavior.from(bottom_sheet);
+
         delete_bottom_behaviour = BottomSheetBehavior.from((ConstraintLayout) findViewById(R.id.bottome_delete_user));
 
         delete_bottom_behaviour.setHideable(true);
@@ -96,6 +98,7 @@ public class Users_List extends MyActivity {
         recyclerView.addItemDecoration(new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.HORIZONTAL));
 
         recyclerView.setLayoutManager(linearLayoutManager);
+
 
         ///
         startActivity(new Intent(this, Landscap_Calender.class));
@@ -161,8 +164,10 @@ public class Users_List extends MyActivity {
 
             @Override
             public void delete(final User user, int pos) {
+
                 add_new_order_bottom.setState(BottomSheetBehavior.STATE_HIDDEN);
                 delete_bottom_behaviour.setState(BottomSheetBehavior.STATE_EXPANDED);
+
                 ((Button) findViewById(R.id.delete_yes)).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {

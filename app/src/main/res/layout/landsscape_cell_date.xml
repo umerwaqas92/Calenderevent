@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="100dp"
+    android:gravity="center"
+    android:id="@+id/landscape_cell_date_linerlayout"
+    android:layout_margin="10dp"
+    android:foreground="?selectableItemBackground"
+android:clickable="true"
+    android:layout_height="100dp">
+    <TextView
+        android:id="@+id/header_days_txt"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:text="Day"
+        android:layout_height="wrap_content">
+
+    </TextView>
+
+    <TextView
+        android:layout_marginTop="2dp"
+        android:textColor="#303F9F"
+        android:id="@+id/landscape_cell_date_date_txt"
+        android:layout_width="wrap_content"
+        android:text="1"
+        android:layout_height="wrap_content">
+
+    </TextView>
+
+</LinearLayout>

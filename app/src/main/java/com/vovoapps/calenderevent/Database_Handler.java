@@ -244,6 +244,20 @@ public class Database_Handler extends SQLiteOpenHelper {
     }
 
 
+
+
+    public int user_event_count(int user, int event_type){
+        Cursor c=getReadableDatabase().rawQuery("SELECT count(*) as count from user_event where event_type=? and event_user =?",new String[]{event_type+"",user+""});
+        if(c!=null){
+            c.moveToFirst();
+            return c.getInt(0);
+        }
+
+        return 0;
+    }
+
+
+
     public ArrayList<User_Event2> get_all_userEVENT(int user) {
         ArrayList<User_Event2> events = new ArrayList<>();
 

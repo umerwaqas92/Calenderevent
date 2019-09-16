@@ -6,6 +6,58 @@
     android:layout_height="match_parent"
     tools:context=".landscape_calender.Landscap_Calender">
 
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tableLayout_header_pic"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TableLayout
+                android:id="@+id/tableLayout_header_days"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+            </TableLayout>
+
+            <ScrollView
+                android:scrollbars="none"
+                android:id="@+id/vertical_scrol"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+              >
+
+                <TableLayout
+
+                    android:id="@+id/tableLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+                </TableLayout>
+
+            </ScrollView>
+
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/landscap_header_cell_recylerVeiw"
         android:layout_width="match_parent"
@@ -18,29 +70,36 @@
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+
+    </androidx.recyclerview.widget.RecyclerView>
 
     <ScrollView
-        android:layout_width="match_parent"
+
+        android:scrollbars="none"
+        android:orientation="vertical"
+        android:id="@+id/tableLayout_header_pic"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:fillViewport="true"
-        android:scrollbarStyle="outsideInset"
-        android:scrollbars="horizontal|vertical">
-
-        <HorizontalScrollView
-            android:scrollbars="horizontal|vertical"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TableLayout
+            android:id="@+id/tableLayout_header_pic_inner"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+          >
 
-            <TableLayout
-                android:id="@+id/tableLayout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
 
-        </HorizontalScrollView>
+        </TableLayout>
 
 
     </ScrollView>
+
+
+
+
+
 
 
 

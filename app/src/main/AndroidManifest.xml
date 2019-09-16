@@ -2,10 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.vovoapps.calenderevent">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,14 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".landscape_calender.Landscap_Calender"></activity>
-
-        <service
-            android:name=".Services.Service_AI"
-            android:enabled="true"
-            android:exported="true" />
+        <activity android:name=".landscape_calender.LandScape_2"></activity>
+        <activity
+            android:name=".landscape_calender.Landscap_Calender"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.fullscreen" />
 
         <activity android:name=".activities.Repeat_Selection" />
+
         <activity android:name=".activities.Users_List">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,8 +28,16 @@
         <activity android:name=".activities.Add_event_type" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
-            android:theme="@style/Base.Theme.AppCompat" /> <!-- optional (needed if default theme has no action bar) -->
-        <activity android:name=".MainActivity" />
+            android:theme="@style/Base.Theme.AppCompat" />
+        <activity android:name=".MainActivity" /> <!-- optional (needed if default theme has no action bar) -->
+        <service
+            android:name=".Services.Service_AI"
+            android:enabled="true"
+            android:exported="true" />
     </application>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 </manifest>
